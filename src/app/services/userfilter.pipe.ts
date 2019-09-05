@@ -1,18 +1,17 @@
-import { PipeTransform, Pipe } from '@angular/core';
-import { User } from '../users/user';
+import { PipeTransform, Pipe } from "@angular/core";
+import { User } from "../users/user";
 
 @Pipe({
-    name: 'userFilter'
+  name: "userFilter"
 })
-
-export class UserFilter implements PipeTransform{
-    transform(users: User[], searchstring: string): User[]{
-        if(!users || !searchstring){
-            return users
-        }
-
-      return  users.filter(user => {
-            return user.name.toLowerCase().indexOf(searchstring.toLowerCase()) !== -1
-        })
+export class UserFilter implements PipeTransform {
+  transform(users: User[], searchstring: string): User[] {
+    if (!users || !searchstring) {
+      return users;
     }
+
+    return users.filter(user => {
+      return user.name.toLowerCase().indexOf(searchstring.toLowerCase()) !== -1;
+    });
+  }
 }

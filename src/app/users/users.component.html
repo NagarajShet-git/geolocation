@@ -23,33 +23,14 @@
         <td (click)="getUserbyid(user.id)">{{ user.name }}</td>
       </tr>
     </table>
+
+    <div *ngIf="error" class="service-error alert-danger my-4 alert">
+      <h5>{{ error.errorTitle }}</h5>
+      <h6>{{ error.errorDesc }}</h6>
+    </div>
   </div>
 
-  <div class="col-md-6" *ngIf="user">
-    <table class="table table-bordered">
-      <tr>
-        <td>Id</td>
-        <td>:</td>
-        <td>{{ user.id }}</td>
-      </tr>
-      <tr>
-        <td>Name</td>
-        <td>:</td>
-        <td>{{ user.name }}</td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td>:</td>
-        <td>{{ user.email }}</td>
-      </tr>
-      <tr>
-        <td>Address</td>
-        <td>:</td>
-        <td>
-            <p class="mb-0">Lat: {{ user.address.geo.lat | number : '1.2-2'}}</p>
-            <p class="mb-0">Lng: {{ user.address.geo.lng | number : '1.2-2'}}</p>
-        </td>
-      </tr>
-    </table>
+  <div class="col-md-6" *ngIf="userId">
+    <app-user [userId]="userId"></app-user>
   </div>
 </div>
