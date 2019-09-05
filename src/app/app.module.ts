@@ -6,13 +6,12 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
 import { GeoSearchComponent } from "./geo-search/geo-search.component";
-import { GeometryService } from "./services/geometry.service";
 import { CordsViewComponent } from "./cords-view/cords-view.component";
 
 @NgModule({
   declarations: [AppComponent, GeoSearchComponent, CordsViewComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [GeometryService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
