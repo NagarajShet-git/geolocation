@@ -1,0 +1,28 @@
+<div class="jumbotron">
+  <h5 class="display-4">Geo Location</h5>
+
+  <hr class="my-2" />
+  <div>
+    <form class="form-inline my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        name="search"
+        [(ngModel)]="search_text"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        type="button"
+        (click)="getGeoCords(search_text)"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="store_search">
+    <app-cords-view [search_text]="store_search"></app-cords-view>
+  </div>
+</div>

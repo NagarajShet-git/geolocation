@@ -6,7 +6,7 @@ import {
 } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { catchError } from "rxjs/operators";
-import { User } from "../users/user";
+import { Geometry } from "../geo-search/geometry";
 
 @Injectable({
   providedIn: "root"
@@ -14,18 +14,13 @@ import { User } from "../users/user";
 export class GeometryService {
   constructor(private _http: HttpClient) {}
 
-  endpoint: string = "http://jsonplaceholder.typicode.com/users";
   errorData = {};
 
-  getUsers(): Observable<User[]> {
+  getLocation(state_name: string): Observable<Geometry> {
     return this._http
-      .get<User[]>(this.endpoint)
-      .pipe(catchError(this.handleError));
-  }
-
-  getUserByid(id: number): Observable<User> {
-    return this._http
-      .get<User>(`${this.endpoint}/${id}`)
+      .get<Geometry>(
+        `http://www.datasciencetoolkit.org/maps/api/geocode/json?sensor=false&address=${state_name}`
+      )
       .pipe(catchError(this.handleError));
   }
 

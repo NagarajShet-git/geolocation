@@ -1,0 +1,28 @@
+<div class="geometry_info" *ngIf="show_cords">
+  <h5>Location Name: {{ search_text }}</h5>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="geometry_block">
+        <h1 class="n_bg">N</h1>
+        <div class="geometry_text">
+          <p>Latitude: {{ cords.northeast.lat | number: "1.2-2" }}</p>
+          <p>Langnitude: {{ cords.northeast.lng | number: "1.2-2" }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="geometry_block">
+        <h1 class="s_bg">S</h1>
+        <div class="geometry_text">
+          <p>Latitude: {{ cords.southwest.lat | number: "1.2-2" }}</p>
+          <p>Langnitude: {{ cords.southwest.lng | number: "1.2-2" }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="service-error alert alert-danger" *ngIf="error">
+  <h1>{{ error.errorTitle }}</h1>
+  <h3>{{ error.errorDesc }}</h3>
+</div>

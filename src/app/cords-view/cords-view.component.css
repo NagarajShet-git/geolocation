@@ -1,0 +1,32 @@
+.geometry_block {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.geometry_block h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 35px;
+  padding: 30px;
+  width: 100px;
+  margin-bottom: 0 !important;
+  color: #ffffff;
+  text-align: center;
+}
+
+.geometry_text {
+  padding: 15px;
+}
+
+.geometry_text p {
+  margin-bottom: 0px;
+}
+
+.n_bg {
+  background-color: rgb(218, 146, 53);
+}
+.s_bg {
+  background-color: rgb(36, 163, 142);
+}

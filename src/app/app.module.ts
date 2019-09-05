@@ -1,29 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { UsersComponent } from './users/users.component';
-import { UserFilter } from './services/userfilter.pipe';
-import { UserComponent } from './user/user.component';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+
+import { GeoSearchComponent } from "./geo-search/geo-search.component";
+import { GeometryService } from "./services/geometry.service";
+import { CordsViewComponent } from "./cords-view/cords-view.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UsersComponent,
-    UserFilter,
-    UserComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  providers: [
-
-  ],
+  declarations: [AppComponent, GeoSearchComponent, CordsViewComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [GeometryService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
