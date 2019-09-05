@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { GeoLocation } from '../geolocation/geolocation';
+import { User } from '../users/user';
 
 
 @Injectable({
@@ -12,16 +12,20 @@ export class GeometryService {
 
   constructor(private _http: HttpClient) { }
 
-  endpoint: string = "http://www.datasciencetoolkit.org/maps/api/";
+  endpoint: string = "http://jsonplaceholder.typicode.com/users";
   errorData = {};
 
-  getLocation(state_name: string): Observable<GeoLocation> {
-    let header = new HttpHeaders();
-    header.set('Access-Control-Allow-Origin: *', 'application/json');
-
-    return this._http.get<GeoLocation>(`${this.endpoint}geocode/json?sensor=false&address=${state_name}`, { headers: header }).pipe(
+  
+  getUsers(): Observable<User[]>{
+    return this._http.get<User[]>(this.endpoint).pipe(
       catchError(this.handleError)
     );
+  }
+
+  getUserByid(id:number): Observable<User>{
+    return this._http.get<User>(`${this.endpoint}/${id}`).pipe(
+      catchError(this.handleError)
+    )
   }
 
   private handleError(error: HttpErrorResponse) {

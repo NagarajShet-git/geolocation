@@ -4,13 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GeolocationComponent } from './geolocation/geolocation.component';
-import { GeometryService } from './services/geometry.service';
+import { UsersComponent } from './users/users.component';
+import { UserFilter } from './services/userfilter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GeolocationComponent
+    UsersComponent,
+    UserFilter,
   ],
   imports: [
     BrowserModule,
