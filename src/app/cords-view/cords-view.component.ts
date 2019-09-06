@@ -44,8 +44,8 @@ export class CordsViewComponent implements OnInit, OnChanges {
             data.results[0].geometry.viewport.northeast.lng;
         }
         if (
-          this.cords.northeast.lat !== null ||
-          this.cords.southwest.lng !== null
+          (this.cords.northeast.lat !== null ||
+          this.cords.southwest.lng !== null) && (data.status !== 'ZERO_RESULTS')
         ) {
           this.show_cords = true;
           this.error_city = false;
