@@ -1,6 +1,10 @@
 <div class="geometry_info" *ngIf="show_cords">
   <h5>Location Name: {{ search_text }}</h5>
-  <div class="row">
+
+  <div class="alert alert-warning" *ngIf="error_city">
+    <strong>Warning: </strong> Please enter valid city name
+  </div>
+  <div class="row" *ngIf="!error_city">
     <div class="col-md-6">
       <div class="geometry_block">
         <h1 class="n_bg">N</h1>
