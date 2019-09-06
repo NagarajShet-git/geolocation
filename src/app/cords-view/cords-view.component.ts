@@ -8,12 +8,12 @@ import { Geometry } from "../geo-search/geometry";
   styleUrls: ["./cords-view.component.css"]
 })
 export class CordsViewComponent implements OnInit, OnChanges {
-  @Input() search_text;
+  @Input() search_text: string;
   show_cords: boolean = false;
   error_city: boolean = false;
   error: {};
 
-  cords = {
+   cords: any = {
     southwest: {
       lat: null,
       lng: null
@@ -45,7 +45,8 @@ export class CordsViewComponent implements OnInit, OnChanges {
         }
         if (
           (this.cords.northeast.lat !== null ||
-          this.cords.southwest.lng !== null) && (data.status !== 'ZERO_RESULTS')
+            this.cords.southwest.lng !== null) &&
+          data.status !== "ZERO_RESULTS"
         ) {
           this.show_cords = true;
           this.error_city = false;
