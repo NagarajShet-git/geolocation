@@ -13,7 +13,7 @@ export class CordsViewComponent implements OnInit, OnChanges {
   error_city: boolean = false;
   error: {};
 
-   cords: any = {
+  cords = {
     southwest: {
       lat: null,
       lng: null
