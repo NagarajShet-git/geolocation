@@ -1,21 +1,22 @@
-export class Geometry {
-    results: [{
-        geometry:  GeometryProp
-    }];
-    status: string
+export interface Geometry {
+  results: [
+    {
+      geometry: GeometryProp;
+    }
+  ];
+  status: string;
 }
 
-
-export class GeometryProp {
-    viewport: ViewPort
+export interface GeometryProp {
+  viewport: ViewPort;
 }
 
-export class ViewPort {
-    southwest: Cords;
-    northeast: Cords;
+export interface ViewPort {
+  southwest: Cords;
+  northeast: Cords;
 }
 
-export class Cords {
-    lat: string;
-    lng: string;
+export interface Cords {
+  lat: string;
+  lng: string;
 }
