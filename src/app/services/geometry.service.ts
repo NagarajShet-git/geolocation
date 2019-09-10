@@ -18,7 +18,7 @@ export class GeometryService {
   getLocation(state_name: string): Observable<Geometry> {
     return this._http
       .get<Geometry>(
-        `http://www.datasciencetoolkit.org/maps/api/geocode/json?sensor=false&address=${state_name}`
+        `/api/geocode/json?sensor=false&address=${state_name}`
       )
       .pipe(catchError(this.handleError));
   }
